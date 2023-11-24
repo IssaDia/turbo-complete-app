@@ -14,63 +14,50 @@ Welcome to the documentation for the frontend of the Turbo complete  AI project.
 - [To improve](#to-improve)
 - [Feedback](#feedback)
 
-
 ## Introduction
+
 This project is the frontend component of the AI Turbo complete 🚀 application. It interacts with the backend API to provide a seamless user experience for customers and administrators.
 
 ## Built With
-React
-TypeScript
-Fetch API
-Prerequisites
+
+- Vite
+- React
+- TypeScript
+  
+## Prerequisites
+
 Before you begin, ensure you have the following installed on your machine:
 
 Node.js and npm
 Your favorite code editor (e.g., Visual Studio Code)
 
 ## Quick Start
-Clone the repository:
 
-bash
-Copy code
-git clone https://github.com/YourUsername/your-frontend-repo.git
-Navigate to the project directory:
+1. Clone the repository:
 
-bash
-Copy code
-cd your-frontend-repo
-Install dependencies:
+2.Navigate to the project directory:
 
-bash
-Copy code
+3.Install dependencies:
+
+```
 npm install
-Create a .env.local file in the project root and configure necessary environment variables (e.g., API endpoint):
-
-env
-Copy code
-REACT_APP_API_URL=http://localhost:5000  # Replace with your backend API URL
-Run the application:
-
-bash
-Copy code
-npm start
-Open your browser and navigate to http://localhost:3000 to view the application.
+```
 
 ## Environment Configuration
-The application uses environment variables to configure various settings. Create a .env.local file in the project root and define your variables there.
 
-## Run the Application
-To start the development server, run:
+Create a .env.local file in the project root and configure necessary environment variables (e.g., API endpoint):
 
-bash
-Copy code
-npm start
-Testing
-To run tests, execute:
+```
+VITE_TURBO_COMPLETE_API_URL=http://127.0.0.1:5002/api/process_image
+```
 
-bash
-Copy code
-npm test
+## Run the application:
+
+```
+npm run dev
+```
+
+Open your browser and navigate to http://localhost:5173/ to view the application.
 
 ## Contributing
 We welcome contributions! To contribute to the project, follow these steps:
@@ -80,6 +67,7 @@ Create a new branch: git checkout -b feature/your-feature-name.
 Make your changes and commit them: git commit -m 'Add some feature'.
 Push to the branch: git push origin feature/your-feature-name.
 Submit a pull request.
+
 ## To improve
 
 Here are some areas for improvement:
