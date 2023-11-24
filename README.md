@@ -4,15 +4,15 @@ Welcome to the documentation for the frontend of the Turbo complete  AI project.
 
 📜 Table of Contents
 
-- Introduction
-- Built With🚀
-- Prerequisites
-- Quick Start
-- Environment Configuration
-- Running the Application
-- Testing
-- Contributing
-- Improvements
+- [Introduction](#introduction)
+- [Built With](#build-with)
+- [Prerequisites](#prerequisites)
+- [Quick Start](#quick-start)
+- [Environment Configuration](#environment-configuration)
+- [Run the Application](#run-the-application)
+- [Contributing](#contributing)
+- [To improve](#to-improve)
+- [Feedback](#feedback)
 
 
 ## Introduction
@@ -28,7 +28,7 @@ Before you begin, ensure you have the following installed on your machine:
 Node.js and npm
 Your favorite code editor (e.g., Visual Studio Code)
 
-Quick Start
+## Quick Start
 Clone the repository:
 
 bash
@@ -56,10 +56,10 @@ Copy code
 npm start
 Open your browser and navigate to http://localhost:3000 to view the application.
 
-Environment Configuration
+## Environment Configuration
 The application uses environment variables to configure various settings. Create a .env.local file in the project root and define your variables there.
 
-Running the Application
+## Run the Application
 To start the development server, run:
 
 bash
@@ -71,7 +71,8 @@ To run tests, execute:
 bash
 Copy code
 npm test
-Contributing
+
+## Contributing
 We welcome contributions! To contribute to the project, follow these steps:
 
 Fork the repository.
@@ -79,9 +80,14 @@ Create a new branch: git checkout -b feature/your-feature-name.
 Make your changes and commit them: git commit -m 'Add some feature'.
 Push to the branch: git push origin feature/your-feature-name.
 Submit a pull request.
-Improvements
+## To improve
+
 Here are some areas for improvement:
 
-Expand test coverage.
-Implement Docker for easier application access.
+- Unit and E2E tests
+- Implement Docker for easier application access.
+
+
 Feel free to contribute and help make Turbo complete 🚀 even better!
+
+## Feedback
