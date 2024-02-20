@@ -3,40 +3,32 @@ import React, { useState, ChangeEvent, FormEvent } from "react";
 import Spinner from "../components/spinner/Spinner";
 
 const App: React.FC = () => {
-  const [selectedImage, setSelectedImage] = useState<File | null>(null);
+  const [keyword, setKeyword] = useState<string>("");
   const [loading, setLoading] = useState<boolean>(false);
   const [description, setDescription] = useState<string>("");
 
-  const handleImageChange = (event: ChangeEvent<HTMLInputElement>) => {
-    if (event.target.files && event.target.files.length > 0) {
-      setSelectedImage(event.target.files[0]);
-    }
+  const handleTextChange = (event: ChangeEvent<HTMLInputElement>) => {
+    setKeyword(event.target.value);
   };
 
   const handleSubmit = async (event: FormEvent) => {
     event.preventDefault();
     setLoading(true);
-    if (!selectedImage) {
-      console.error("Please select an image.");
-      return;
-    }
-
-    const formData = new FormData();
-    formData.append("image", selectedImage);
 
     try {
       const response = await fetch(
-        `${import.meta.env.VITE_TURBO_COMPLETE_URL}`,
+        `${import.meta.env.VITE_TURBO_COMPLETE_API_URL}`,
         {
           method: "POST",
-          body: formData,
+          body: keyword,
         }
       );
 
       if (response.ok) {
         setLoading(false);
-        const data = await response.json();
+        const data = await response;
         console.log("API response:", data);
+
         setDescription(data.description);
       } else {
         setLoading(false);
@@ -65,14 +57,12 @@ const App: React.FC = () => {
             className="block text-gray-700 text-sm font-bold mb-2"
             htmlFor="image"
           >
-            Choose an image
+            Write the product you want a description for
           </label>
           <input
             className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
-            id="image"
-            type="file"
-            accept="image/*"
-            onChange={handleImageChange}
+            type="text"
+            onChange={handleTextChange}
           />
         </div>
         <div className="flex items-center justify-center">
@@ -80,7 +70,7 @@ const App: React.FC = () => {
             className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline"
             type="submit"
           >
-            Process Image
+            Submit
           </button>
         </div>
         <div>{loading ? <Spinner /> : description && <p>{description}</p>}</div>
